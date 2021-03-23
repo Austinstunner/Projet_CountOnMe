@@ -26,7 +26,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="7ax-Oc-png" userLabel="Digits">
                                 <rect key="frame" x="29" y="512" width="370" height="377"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Cwb-t4-Fit">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Cwb-t4-Fit" userLabel="First Line">
                                         <rect key="frame" x="0.0" y="0.0" width="370" height="65"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVA-V9-Bsa">
@@ -73,7 +73,7 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="mVI-gn-kxm">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="mVI-gn-kxm" userLabel="Second Line">
                                         <rect key="frame" x="0.0" y="78" width="370" height="65"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7u6-Fr-WFM">
@@ -134,7 +134,7 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="V7u-xW-2ym">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="V7u-xW-2ym" userLabel="Third Line">
                                         <rect key="frame" x="0.0" y="156" width="370" height="65"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DiB-Q5-UUD">
@@ -195,7 +195,7 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="9Bj-S8-U3B">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="9Bj-S8-U3B" userLabel="Fourth Line">
                                         <rect key="frame" x="0.0" y="234" width="370" height="65"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbL-IT-Ewb">
@@ -256,7 +256,7 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="9Tx-Lp-Tnv">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="9Tx-Lp-Tnv" userLabel="Fifth Line">
                                         <rect key="frame" x="0.0" y="312" width="370" height="65"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frf-di-Qf5">
@@ -335,25 +335,25 @@
                     </view>
                     <connections>
                         <outlet property="textView" destination="T2H-yn-nBB" id="5pb-Lk-ulG"/>
-                        <outletCollection property="calculaterButtons" destination="frf-di-Qf5" collectionClass="NSMutableArray" id="WgO-eX-61J"/>
-                        <outletCollection property="calculaterButtons" destination="E5A-Sw-aA1" collectionClass="NSMutableArray" id="zcH-pD-JN2"/>
-                        <outletCollection property="calculaterButtons" destination="4im-at-87M" collectionClass="NSMutableArray" id="8GU-Uj-nDe"/>
-                        <outletCollection property="calculaterButtons" destination="eZs-BO-On7" collectionClass="NSMutableArray" id="piO-hi-7o2"/>
-                        <outletCollection property="calculaterButtons" destination="TbL-IT-Ewb" collectionClass="NSMutableArray" id="oAu-Kx-Ah5"/>
-                        <outletCollection property="calculaterButtons" destination="tO0-UA-mhZ" collectionClass="NSMutableArray" id="imw-ey-3mX"/>
-                        <outletCollection property="calculaterButtons" destination="2Cc-6t-5uQ" collectionClass="NSMutableArray" id="qnh-Tf-1Wv"/>
-                        <outletCollection property="calculaterButtons" destination="Isa-xw-4Mg" collectionClass="NSMutableArray" id="hYO-RZ-2No"/>
-                        <outletCollection property="calculaterButtons" destination="DiB-Q5-UUD" collectionClass="NSMutableArray" id="lVv-Yr-LFm"/>
-                        <outletCollection property="calculaterButtons" destination="0WZ-zu-g0a" collectionClass="NSMutableArray" id="gSl-W5-ipr"/>
-                        <outletCollection property="calculaterButtons" destination="thE-h2-mea" collectionClass="NSMutableArray" id="CSw-28-a7H"/>
-                        <outletCollection property="calculaterButtons" destination="xWa-DV-65g" collectionClass="NSMutableArray" id="Z0E-Tk-nun"/>
-                        <outletCollection property="calculaterButtons" destination="7u6-Fr-WFM" collectionClass="NSMutableArray" id="5bW-gH-77I"/>
-                        <outletCollection property="calculaterButtons" destination="lWN-Wc-bYA" collectionClass="NSMutableArray" id="ASk-Mm-jMc"/>
-                        <outletCollection property="calculaterButtons" destination="N0h-6G-68y" collectionClass="NSMutableArray" id="7ag-xc-KDU"/>
-                        <outletCollection property="calculaterButtons" destination="0bg-rC-XvW" collectionClass="NSMutableArray" id="UII-jI-ZWi"/>
-                        <outletCollection property="calculaterButtons" destination="Zo1-mN-vcE" collectionClass="NSMutableArray" id="mWA-6C-crR"/>
-                        <outletCollection property="calculaterButtons" destination="17W-Qd-cst" collectionClass="NSMutableArray" id="56M-rE-M7R"/>
-                        <outletCollection property="calculaterButtons" destination="cVA-V9-Bsa" collectionClass="NSMutableArray" id="One-XC-aTQ"/>
+                        <outletCollection property="digitsButtons" destination="frf-di-Qf5" collectionClass="NSMutableArray" id="WgO-eX-61J"/>
+                        <outletCollection property="digitsButtons" destination="E5A-Sw-aA1" collectionClass="NSMutableArray" id="zcH-pD-JN2"/>
+                        <outletCollection property="digitsButtons" destination="4im-at-87M" collectionClass="NSMutableArray" id="8GU-Uj-nDe"/>
+                        <outletCollection property="digitsButtons" destination="eZs-BO-On7" collectionClass="NSMutableArray" id="piO-hi-7o2"/>
+                        <outletCollection property="digitsButtons" destination="TbL-IT-Ewb" collectionClass="NSMutableArray" id="oAu-Kx-Ah5"/>
+                        <outletCollection property="digitsButtons" destination="tO0-UA-mhZ" collectionClass="NSMutableArray" id="imw-ey-3mX"/>
+                        <outletCollection property="digitsButtons" destination="2Cc-6t-5uQ" collectionClass="NSMutableArray" id="qnh-Tf-1Wv"/>
+                        <outletCollection property="digitsButtons" destination="Isa-xw-4Mg" collectionClass="NSMutableArray" id="hYO-RZ-2No"/>
+                        <outletCollection property="digitsButtons" destination="DiB-Q5-UUD" collectionClass="NSMutableArray" id="lVv-Yr-LFm"/>
+                        <outletCollection property="digitsButtons" destination="0WZ-zu-g0a" collectionClass="NSMutableArray" id="gSl-W5-ipr"/>
+                        <outletCollection property="digitsButtons" destination="thE-h2-mea" collectionClass="NSMutableArray" id="CSw-28-a7H"/>
+                        <outletCollection property="digitsButtons" destination="xWa-DV-65g" collectionClass="NSMutableArray" id="Z0E-Tk-nun"/>
+                        <outletCollection property="digitsButtons" destination="7u6-Fr-WFM" collectionClass="NSMutableArray" id="5bW-gH-77I"/>
+                        <outletCollection property="digitsButtons" destination="lWN-Wc-bYA" collectionClass="NSMutableArray" id="ASk-Mm-jMc"/>
+                        <outletCollection property="digitsButtons" destination="N0h-6G-68y" collectionClass="NSMutableArray" id="7ag-xc-KDU"/>
+                        <outletCollection property="digitsButtons" destination="0bg-rC-XvW" collectionClass="NSMutableArray" id="UII-jI-ZWi"/>
+                        <outletCollection property="digitsButtons" destination="Zo1-mN-vcE" collectionClass="NSMutableArray" id="mWA-6C-crR"/>
+                        <outletCollection property="digitsButtons" destination="17W-Qd-cst" collectionClass="NSMutableArray" id="56M-rE-M7R"/>
+                        <outletCollection property="digitsButtons" destination="cVA-V9-Bsa" collectionClass="NSMutableArray" id="One-XC-aTQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7XP-3c-sJZ" sceneMemberID="firstResponder"/>

@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 // MARK: Protocol
 
 // Update View and Alert
@@ -18,7 +17,6 @@ protocol LogicalDelegate: class {
 }
 
 final class Logical {
-    
     // MARK: - Enumerations
     // Display error message when operations errors
     enum ErrorCase {
@@ -46,23 +44,18 @@ final class Logical {
             }
         }
     }
-    
     // MARK: - Properties
-    
     weak var delegate: LogicalDelegate?
-    
     // Display operation on screen
     var calculInProgress: String = "0" {
         didSet {
             delegate?.updateDisplay(calculInProgress)
         }
     }
-    
     // Rewrite operation and remove space
     private var operation: [String] {
         return calculInProgress.split(separator: " ").map { "\($0)" }
     }
-    
     // Check is first element is a number
     private var firstValue: Bool {
         if calculInProgress == "0" || calculInProgress == "" {
@@ -71,41 +64,33 @@ final class Logical {
         }
         return false
     }
-    
     // Check if last element in operation is an operator
     private var canAddOperator: Bool {
         return operation.last != "+" && operation.last != "-" && operation.last != "÷" &&
             operation.last != "x"
     }
-    
     // Check if we have 3 necessary elements for calcul
     private var expressionHaveEnoughElement: Bool {
         guard operationHaveResult == false else { return true }
         return operation.count >= 3
     }
-    
     // Check last element is not a Decimal
     private var lastElementDecimal: Bool {
         return operation.last?.last != "."
     }
-    
     // Operation have a result
     private var operationHaveResult: Bool {
         return calculInProgress.firstIndex(of: "=") != nil
     }
-    
     // Prevent divide by 0
     private var divideByZero: Bool {
         return calculInProgress.contains("÷ 0")
     }
-    
     // MARK: - Functions
-    
     // Display error message for the actual alert
     func errorMessage(alert: ErrorCase) {
         delegate?.showAlertPopUp(title: alert.title, message: alert.message)
     }
-    
     // Adding number to the operation
     func appendSelectedNumber(_ numberText: String) {
         guard !operationHaveResult else { return errorMessage(alert: .operationHaveResult) }
@@ -116,16 +101,13 @@ final class Logical {
             calculInProgress.append(numberText)
         }
     }
-    
     // Adding decimal to the operation
     func isDecimal() {
         guard operation.first?.contains("") == false else { return errorMessage(alert: .syntax) }
         guard operation.last?.contains(".") == false else { return errorMessage(alert: .decimalExist) }
         guard canAddOperator else { return errorMessage(alert: .syntax) }
-        
         calculInProgress.append(".")
     }
-    
     // Adding operand to the operation
     func appendOperand(_ operandChoice: String) {
         guard !operationHaveResult else { return errorMessage(alert: .operationHaveResult) }
@@ -147,7 +129,6 @@ final class Logical {
             errorMessage(alert: .wrongOperator)
         }
     }
-    
     // Correction elements
     func correction() {
         guard !operationHaveResult else { return errorMessage(alert: .operationHaveResult)}
@@ -157,34 +138,28 @@ final class Logical {
             calculInProgress = String(calculInProgress.dropLast())
         }
     }
-    
     // Remove all elements
     func reset() {
         calculInProgress.removeAll()
         delegate?.updateDisplay("0")
     }
-    
     // To keep last result for an other operation
     func memorizeResult() {
         guard operationHaveResult, let lastResult = operation.last else { return errorMessage(alert: .memorize) }
         calculInProgress = lastResult
     }
-    
     // Reduce all the operation and make full calculation
     func makeOperation() {
         guard expressionHaveEnoughElement else { return errorMessage(alert: .operationImpossible) }
         guard canAddOperator, !operationHaveResult else { return errorMessage(alert: .operationHaveResult) }
         guard !divideByZero else { return errorMessage(alert: .divideByZero) }
         guard lastElementDecimal else { return errorMessage(alert: .syntax) }
-        
         var operationsToReduce = operation
         let priorityOperators = ["x", "÷"]
         let classicOperators = ["+", "-"]
         var currentIndex: Int?
         var result = ""
-        
         while operationsToReduce.count > 1 {
-            
             // Checking priority operators
             let indexPriorityOperator = operationsToReduce.firstIndex(where: {priorityOperators.contains($0)})
             if let operatorActivePrior = indexPriorityOperator {
@@ -196,7 +171,6 @@ final class Logical {
                     currentIndex = operatorActiveClassic
                 }
             }
-        
             // Execute method to make calculation by verify index
             if let index = currentIndex {
                 let operand = operationsToReduce[index]
@@ -211,7 +185,6 @@ final class Logical {
             calculInProgress.append(" = \(operationsToReduce[0])")
         }
     }
-    
     // Method to calculate when operand
     private func calculate(leftNumber: Double, operand: String, rightNumber: Double) -> Double {
         var result: Double = 0.0
@@ -224,7 +197,6 @@ final class Logical {
         }
         return result
     }
-    
     // Format method to remove decimal
     private func formatDecimal(number: Double) -> String {
         let format = NumberFormatter()

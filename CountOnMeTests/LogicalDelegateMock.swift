@@ -12,10 +12,8 @@ import XCTest
 class LogicalDelegateMock: LogicalDelegate {
     var testAlertTitle: String = ""
     var testAlertMessage: String = ""
-    
     func updateDisplay(_ calculInProgress: String) {
     }
-    
     func showAlertPopUp(title: String, message: String) {
         testAlertTitle = title
         testAlertMessage = message
